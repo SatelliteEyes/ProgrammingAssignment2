@@ -1,7 +1,14 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix creates a list of functions: get, which returns the original
+## matrix, setinv, which takes input from cacheSolve (or directly, but dont do
+## that), and getinv, which returns the inverse of the original matrix
+## 
+## cacheSolve takes a matrix, checks the getinv function to see if there is a 
+## cached inverse. If so, it returns the cached value. If not, it calculates the
+## inverse with the solve function and stores the result using the setinv
+## function
 
-## Write a short comment describing this function
+## makeCacheMatrix stores the inverse of a given matrix and severl functions
+## that set and return the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -17,7 +24,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve checks to see if the inverse is stored and returns the stored 
+##value. If there is no stored value, it calculates the inverse and stores it.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
